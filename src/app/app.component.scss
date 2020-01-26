@@ -1,0 +1,32 @@
+
+.listBackground {
+  background-color: black;
+
+
+  &__logo{
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  &__img{
+    height: 70px;
+  }
+
+  &__title{
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  h1 {
+    margin: 5px;
+  }
+
+  span {
+    margin-right: 10px;
+  }
+}
+
+
+

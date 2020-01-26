@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+h1,p {
+  font-family: 'Raleway', sans-serif;
+};
+
+button {
+  display: block;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  font-size: 160%;
+  border-radius: 3px;
+  padding: 8px;
+};
+
+button:hover {
+  cursor: pointer;
+};
+
+.listArea {
+  margin-top: 30px;
+  margin-bottom: 30px;
+};
+
+.checkListItem {
+  background-color: white;
+  border: 5px;
+  border-color: limegreen;
+  display: block;
+  height: 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 200px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.gategory1 {
+  border-color: limegreen;
+}
