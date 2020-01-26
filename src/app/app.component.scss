@@ -1,6 +1,6 @@
 
 .listBackground {
-  background-color: blue;
+  background-color: black;
 
 
   &__logo{
@@ -23,8 +23,11 @@
     margin: 5px;
   }
 
-  span {
-    margin-right: 10px;
+  .checkListItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
   }
 }
 
