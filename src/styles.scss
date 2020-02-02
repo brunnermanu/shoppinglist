@@ -1,11 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   background-color: black;
-}
-
-h1,p {
   font-family: 'Raleway', sans-serif;
-};
+}
 
 .addButton {
   display: block;
@@ -15,8 +12,6 @@ h1,p {
   border-radius: 3px;
   padding: 5px;
 };
-
-
 
 button:hover {
   cursor: pointer;

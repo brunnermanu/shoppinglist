@@ -10,20 +10,17 @@
   justify-content: space-between;
   background-color: white;
   height: 20px;
-  margin: 10px auto auto;
+  margin: 6px auto auto;
   width: 200px;
   border-radius: 3px;
   border: 3px solid limegreen;
   padding: 8px;
 }
 
-span {
-  margin-left: 10px;
-}
-
 input.list-checkbox {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
 }
 
 .deleteButtonArea {
