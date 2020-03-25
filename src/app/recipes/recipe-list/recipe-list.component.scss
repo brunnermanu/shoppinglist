@@ -1,7 +1,6 @@
-.body {
-  text-decoration: none;
-}
-.addButton {
+
+
+.add-button {
   color: white;
   display: block;
   margin: 10px auto;
@@ -16,8 +15,8 @@
   transition: 0.2s ease-in-out;
 };
 
-.addButton:focus {
-  background: linear-gradient(-90deg,rgb(164,84,252), rgb(7, 191, 192));
+.add-button:focus {
+  background: linear-gradient(-90deg, rgb(62, 17, 252), rgb(12, 137, 192));
 }
 
 
@@ -28,5 +27,18 @@ button:hover {
   background-color: rgb(0, 0, 0, 0.7);
 };
 
+.recipe-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 600px;
+}
 
-
+.recipe-area {
+  padding: 20px;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
