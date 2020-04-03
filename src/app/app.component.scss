@@ -1,7 +1,7 @@
 .body {
   text-decoration: none;
 }
-.addButton {
+.add-button {
   color: white;
   display: block;
   margin: 10px auto;
@@ -15,12 +15,9 @@
   outline: none;
   transition: 0.2s ease-in-out;
 };
-
-.addButton:focus {
+.add-button:focus {
   background: linear-gradient(-90deg,rgb(164,84,252), rgb(7, 191, 192));
 }
-
-
 button:hover {
   cursor: pointer;
   border-color: black;

@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "shoppinglist"
+    }
+  },
+  "defaultProject": "shoppinglist",
+  "cli": {
+    "analytics": false
+  }
 }
