@@ -1,8 +1,12 @@
 <div class="list">
-  <div class="list-edit">
+  <div class="list__edit">
     <app-shopping-edit></app-shopping-edit>
   </div>
   <hr>
-  <p>this is the list</p>
+  <ul class="list__group">
+    <a class="list__group-item" *ngFor="let ingredient of ingredients">
+       {{ ingredient.amount }} {{ ingredient.unit }}, {{ ingredient.name }}
+    </a>
+  </ul>
 
 </div>

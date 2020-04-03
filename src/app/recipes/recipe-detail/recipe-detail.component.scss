@@ -1,5 +1,6 @@
 .detail-area {
- width: 600px;
+  width: 600px;
+
   &__btn-area {
     display: flex;
     flex-direction: row;
@@ -8,37 +9,13 @@
     align-content: center;
     align-items: flex-start;
   }
+
   &__title {
     text-align: center;
   }
+
   &__description {
     text-align: center;
   }
 }
-.add-button,
-.delete-button{
-  color: white;
-  display: block;
-  margin: 10px 10px;
-  width: 100px;
-  font-size: 10px;
-  font-weight: 200;
-  border-radius: 3px;
-  border: 1px solid black;
-  padding: 5px;
-  background-color: black;
-  outline: none;
-  transition: 0.2s ease-in-out;
-};
-.add-button:focus {
-  background: linear-gradient(-90deg, rgb(62, 17, 252), rgb(128, 10, 192));
-};
-.delete-button:focus {
-  background: linear-gradient(-90deg, rgb(4, 9, 84), rgb(8, 80, 95));
-};
-button:hover {
-  cursor: pointer;
-  border-color: black;
-  outline: none;
-  background-color: rgb(0, 0, 0, 0.7);
-};
+

@@ -1,5 +1,5 @@
 .list {
-  max-width: 400px;
+  width: 400px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -7,10 +7,30 @@
   align-content: center;
   align-items: center;
   margin: 0 auto 0 auto;
+
+  &__edit {
+    max-width: 400px;
+  }
+  &__group {
+    width:400px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    padding: 0px;
+  }
+
+  &__group-item {
+    width: 250px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 7px;
+    margin-bottom: 5px;
+  }
 }
 
-.list-edit {
-  max-width: 400px;
-}
+
 
 
