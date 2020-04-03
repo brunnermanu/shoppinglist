@@ -1,0 +1,33 @@
+.button {
+  color: white;
+  display: block;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  margin: 10px 10px;
+  width: 100px;
+  font-size: 10px;
+  font-weight: 200;
+}
+.button:hover {
+  cursor: pointer;
+  border-color: black;
+  outline: none;
+};
+.add-button{
+  background: linear-gradient(90deg, rgb(61, 17, 255), rgb(128, 10, 192));
+};
+.add-button:focus{
+  background: linear-gradient(90deg, rgb(42, 17, 141), rgb(128, 10, 192));
+};
+.delete-button {
+  background: black;
+}
+.delete-button:focus {
+  background: linear-gradient(-90deg, rgb(4, 9, 84), rgb(8, 80, 95));
+};
+
+
+

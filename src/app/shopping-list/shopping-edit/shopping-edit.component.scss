@@ -1,0 +1,31 @@
+.form-edit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+  &__name {
+    width: 200px
+  }
+  &__amount {
+    width: 70px;
+  }
+  &__unit {
+    width: 70px;
+  }
+  &__button-area {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+
+  }
+}
+input {
+  height: 25px;
+}
+

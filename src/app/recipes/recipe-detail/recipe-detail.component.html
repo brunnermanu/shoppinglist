@@ -9,8 +9,8 @@
       <p class="detail-area__description">Description</p>
     </div>
   <div class="detail-area__btn-area">
-    <button class="add-button">add to Shopping List</button>
-    <button class="add-button">Edit Recipe</button>
-    <button class="delete-button">delete Recipe</button>
+    <app-button [add]="true" [buttonName]="'add to Shopping List'"></app-button>
+    <app-button [add]="true" [buttonName]="'Edit Recipe'"></app-button>
+    <app-button [delete]="true" [buttonName]="'delete Recipe'"></app-button>
   </div>
 </div>
