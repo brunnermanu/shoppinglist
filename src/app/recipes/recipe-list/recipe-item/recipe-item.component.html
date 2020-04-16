@@ -1,1 +1,11 @@
-
+<a href="#" (click)="onSelected()">
+  <div class="recipe-area">
+    <div class="pull-left">
+      <h4>{{ recipe.name }}</h4>
+      <p>{{ recipe.description }}</p>
+    </div>
+    <span>
+        <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="recipe-img" style="max-height: 80px;">
+      </span>
+  </div>
+</a>

@@ -1,4 +1,5 @@
 .form-edit {
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -6,16 +7,22 @@
   align-content: center;
   align-items: center;
 
-  &__name {
+
+  &__name,
+  &__name-input {
     width: 200px
   }
-  &__amount {
-    width: 70px;
-  }
+  &__amount,
   &__unit {
+    width: 90px;
+  }
+  &__amount-input,
+  &__unit-input{
     width: 70px;
   }
+
   &__button-area {
+    margin-top:40px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -27,5 +34,7 @@
 }
 input {
   height: 25px;
+  font-family: 'Raleway', sans-serif;
+  font-size: medium;
 }
 
