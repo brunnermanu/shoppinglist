@@ -1,5 +1,4 @@
-
 <div class="recipes">
-    <app-recipe-list></app-recipe-list>
-    <app-recipe-detail></app-recipe-detail>
+    <app-recipe-list (recipeWasSelected)="selectedRecipe = $event"></app-recipe-list>
+    <app-recipe-detail *ngIf="selectedRecipe"></app-recipe-detail>
 </div>
