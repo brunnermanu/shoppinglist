@@ -1,12 +1,12 @@
 <div class="detail-area">
-    <div>
-      <img src="" class="detail-area__img">
+    <div class="detail-area__img-area">
+      <img [src]="recipe.imagePath" class="detail-area__img">
     </div>
     <div>
-      <h3 class="detail-area__title">Recipe Name</h3>
+      <h3 class="detail-area__title">{{ recipe.name }}</h3>
     </div>
-  <div>
-      <p class="detail-area__description">Description</p>
+    <div>
+      <p class="detail-area__description">{{ recipe.description }}</p>
     </div>
   <div class="detail-area__btn-area">
     <app-button [add]="true" [buttonName]="'add to Shopping List'"></app-button>
