@@ -11,7 +11,7 @@ export class RecipeListComponent implements OnInit {
     new Recipe('A Test Recipe', 'This is simply a Test',
       'https://res.cloudinary.com/swissmilk/image/fetch/q_auto,f_auto/' +
       'https://api.swissmilk.ch/wp-content/uploads/2019/05/ss-alltagsrezepte-winter-geschmortes-wintergemuese-mit-poulet.jpg'),
-    new Recipe('A Test Recipe', 'This is simply a Test',
+    new Recipe('Another Test Recipe', 'This is simply a Test',
       'https://res.cloudinary.com/swissmilk/image/fetch/q_auto,f_auto/' +
       'https://api.swissmilk.ch/wp-content/uploads/2019/05/ss-alltagsrezepte-winter-geschmortes-wintergemuese-mit-poulet.jpg'),
   ];
@@ -20,7 +20,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRecipeSelected(recipe: Recipe){
+  onRecipeSelected(recipe: Recipe) {
     this.recipeWasSelected.emit(recipe);
   }
 

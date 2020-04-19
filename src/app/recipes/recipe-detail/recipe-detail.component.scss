@@ -1,6 +1,16 @@
 .detail-area {
   width: 400px;
 
+  &__img-area {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__img {
+    margin-top: 20px;
+    max-height: 250px;
+  }
+
   &__btn-area {
     display: flex;
     flex-direction: row;
