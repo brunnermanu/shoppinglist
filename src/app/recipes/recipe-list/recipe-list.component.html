@@ -1,10 +1,9 @@
 <div class="btn">
-  <app-button [add]="true" [buttonName]="'New Recipe'"></app-button>
+  <app-button [add]="true" [buttonName]="'New Recipe'" (click)="onNewRecipe()"></app-button>
 </div>
 <div class="recipe-list">
   <app-recipe-item
-    *ngFor="let recipeElement of recipes"
+    *ngFor="let recipeElement of recipes; let i = index"
     [recipe]="recipeElement"
-    (recipeSelected)="onRecipeSelected(recipeElement)">
-  </app-recipe-item>
+  [index]="i"></app-recipe-item>
 </div>

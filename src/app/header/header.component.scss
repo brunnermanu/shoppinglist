@@ -21,6 +21,7 @@
     max-width: 250px;
   }
 }
+
   .header-nav-bar-left {
     text-decoration: none;
     width: 250px;
@@ -29,8 +30,10 @@
     &__dropdown {
       list-style-type: none;
       font-size: 100%;
-      padding-inline-start: 0px;
+    }
 
+    &__dropdown-menu ul {
+      padding-inline-start: 0px;
     }
 
     &__li {

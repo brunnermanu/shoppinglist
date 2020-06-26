@@ -1,11 +1,12 @@
-<a href="#" (click)="onSelected()">
-  <div class="recipe-area">
+<a class="recipe-area"
+  style="cursor: pointer"
+  [routerLink]="[index]"
+  routerLinkActive="active">
     <div class="pull-left">
-      <h4>{{ recipe.name }}</h4>
+      <h3>{{ recipe.name }}</h3>
       <p>{{ recipe.description }}</p>
     </div>
     <span>
         <img [src]="recipe.imagePath" alt="{{ recipe.name }}" class="recipe-img" style="max-height: 80px;">
       </span>
-  </div>
 </a>
