@@ -8,9 +8,18 @@
     <div>
       <p class="detail-area__description">{{ recipe.description }}</p>
     </div>
+    <div>
+      <ul class="detail-area__list">
+        <li class="detail-area__list-item"
+        *ngFor="let ingredient of recipe.ingredients">
+          {{ ingredient.amount }} {{ ingredient.unit }} - {{ ingredient.name }}
+          <hr>
+        </li>
+      </ul>
+    </div>
   <div class="detail-area__btn-area">
-    <app-button [add]="true" [buttonName]="'add to Shopping List'"></app-button>
-    <app-button [add]="true" [buttonName]="'Edit Recipe'"></app-button>
+    <app-button [add]="true" [buttonName]="'add to Shopping List'" (click)="onAddToShoppingList()"></app-button>
+    <app-button [add]="true" [buttonName]="'Edit Recipe'" (click)="onEditRecipe()"></app-button>
     <app-button [delete]="true" [buttonName]="'delete Recipe'"></app-button>
   </div>
 </div>

@@ -27,5 +27,13 @@
   &__description {
     text-align: center;
   }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__list-item {
+    text-decoration: none;
+  }
 }
 
