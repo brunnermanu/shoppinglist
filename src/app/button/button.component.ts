@@ -15,5 +15,11 @@ export class ButtonComponent {
   @Input()
   delete: boolean;
 
+  @Input()
+  clear: boolean;
+
+  @Input()
+  public disabledValue: boolean;
+
   constructor() { }
 }
