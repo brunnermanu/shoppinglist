@@ -5,9 +5,7 @@
     <div>
       <h3 class="detail-area__title">{{ recipe.name }}</h3>
     </div>
-    <div>
-      <p class="detail-area__description">{{ recipe.description }}</p>
-    </div>
+
     <div>
       <ul class="detail-area__list">
         <li class="detail-area__list-item"
@@ -17,6 +15,10 @@
         </li>
       </ul>
     </div>
+
+  <div>
+    <p class="detail-area__description">{{ recipe.description }}</p>
+  </div>
   <div class="detail-area__btn-area">
     <app-button [add]="true" [buttonName]="'add to Shopping List'" (click)="onAddToShoppingList()"></app-button>
     <app-button [add]="true" [buttonName]="'Edit Recipe'" (click)="onEditRecipe()"></app-button>

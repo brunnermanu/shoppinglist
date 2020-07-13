@@ -19,11 +19,12 @@
         type="text"
         id="imagePath"
         class="form-control"
-        formControlName="imagePath">
+        formControlName="imagePath"
+        #imagePath>
     </div>
 
     <div class="form-group-img">
-      <img src="" class="img-responsive">
+      <img [src]="imagePath.value" class="img-responsive">
     </div>
 
     <div class="form-group-description">
@@ -70,11 +71,11 @@
           class="form-control"
           formControlName="category">
       </div>
-      <app-button-x  [delete]="true" [buttonName]="'X'"></app-button-x>
+      <app-button-x  [delete]="true" [buttonName]="'X'" (click)="onDeleteIngredient(i)"></app-button-x>
     </div>
   <hr>
   <div class="button-area">
-    <app-button-submit [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button-submit>
+    <app-button [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button>
   </div>
 </div>
   </form>
