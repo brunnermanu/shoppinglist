@@ -1,0 +1,25 @@
+.button {
+  color: white;
+  display: block;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding: 5px;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  width: 30px;
+  height: 30px;
+  font-size: 10px;
+  font-weight: 200;
+}
+.button:hover {
+  cursor: pointer;
+  border-color: #242424;
+  outline: none;
+};
+
+.delete-button {
+  background: black;
+}
+.delete-button:focus {
+  background:rgb(4, 9, 84);
+};

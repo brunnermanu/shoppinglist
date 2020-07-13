@@ -1,1 +1,81 @@
-<p>recipe-edit works!</p>
+<div class="row">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div class="button-area">
+      <app-button-submit [add]="true" [buttonName]="'Save'"></app-button-submit>
+      <app-button [delete]="true" [buttonName]="'Cancel'" (click)="onCancel()"></app-button>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name">
+    </div>
+
+    <div class="form-group">
+      <label for="imagePath">Image URL</label>
+      <input
+        type="text"
+        id="imagePath"
+        class="form-control"
+        formControlName="imagePath">
+    </div>
+
+    <div class="form-group-img">
+      <img src="" class="img-responsive">
+    </div>
+
+    <div class="form-group-description">
+      <label for="description">Description</label>
+      <textarea
+        type="text"
+        id="description"
+        class="form-control"
+        formControlName="description"></textarea>
+    </div>
+<div formArrayName="ingredients">
+    <div class="form-group-ingredient"
+         *ngFor="let ingredientCtrl of controls; let i = index"
+          [formGroupName]="i">
+      <div class="ingredient-area-amount">
+        <label for="amount">Amount</label>
+        <input
+          type="text"
+          id="amount"
+          class="form-control"
+          formControlName="amount">
+      </div>
+      <div class="ingredient-area-unit">
+        <label for="unit">Unit</label>
+        <input
+          type="text"
+          id="unit"
+          class="form-control"
+          formControlName="unit">
+      </div>
+      <div class="ingredient-area-name">
+        <label for="ingredient">Ingredient</label>
+        <input
+          type="text"
+          id="ingredient"
+          class="form-control"
+          formControlName="name">
+      </div>
+      <div class="ingredient-area-category">
+        <label for="ingredient">Category</label>
+        <input
+          type="number"
+          id="category"
+          class="form-control"
+          formControlName="category">
+      </div>
+      <app-button-x  [delete]="true" [buttonName]="'X'"></app-button-x>
+    </div>
+  <hr>
+  <div class="button-area">
+    <app-button-submit [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button-submit>
+  </div>
+</div>
+  </form>
+</div>
