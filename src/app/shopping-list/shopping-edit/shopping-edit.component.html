@@ -8,7 +8,7 @@
           id="amount"
           name="amount"
           ngModel
-          pattern="[1-9]+[0-9]*$"
+          pattern="^[1-9]+[0-9]*$"
           required
           type="number"
         >
@@ -24,14 +24,25 @@
         >
       </div>
       <div class="form-edit__name">
-        <label for="name">Name</label>
+      <label for="name">Name</label>
+      <input
+        class="form-edit__name-input"
+        id="name"
+        name="name"
+        ngModel
+        required
+        type="text"
+      >
+    </div>
+      <div class="form-edit__category">
+        <label for="category">Category</label>
         <input
-          class="form-edit__name-input"
-          id="name"
-          name="name"
+          class="form-edit__category-input"
+          id="category"
+          name="category"
           ngModel
           required
-          type="text"
+          type="number"
         >
       </div>
     </div>

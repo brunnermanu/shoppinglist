@@ -11,12 +11,14 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { ButtonComponent } from './button/button.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeService } from './recipes/recipe.service';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { ButtonSubmitComponent } from './button-submit/button-submit.component';
+import { ButtonXComponent } from './button-x/button-x.component';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { ButtonSubmitComponent } from './button-submit/button-submit.component';
     ShoppingEditComponent,
     RecipeStartComponent,
     RecipeEditComponent,
-    ButtonSubmitComponent
+    ButtonSubmitComponent,
+    ButtonXComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
   ],
   providers: [

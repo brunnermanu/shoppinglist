@@ -12,7 +12,7 @@
       <ul class="detail-area__list">
         <li class="detail-area__list-item"
         *ngFor="let ingredient of recipe.ingredients">
-          {{ ingredient.amount }} {{ ingredient.unit }} - {{ ingredient.name }}
+          {{ ingredient.amount }} {{ ingredient.unit }} - {{ ingredient.name }} | {{ingredient.category}}
           <hr>
         </li>
       </ul>
@@ -20,6 +20,6 @@
   <div class="detail-area__btn-area">
     <app-button [add]="true" [buttonName]="'add to Shopping List'" (click)="onAddToShoppingList()"></app-button>
     <app-button [add]="true" [buttonName]="'Edit Recipe'" (click)="onEditRecipe()"></app-button>
-    <app-button [delete]="true" [buttonName]="'delete Recipe'"></app-button>
+    <app-button [delete]="true" [buttonName]="'delete Recipe'" (click)="onDeleteRecipe()"></app-button>
   </div>
 </div>
