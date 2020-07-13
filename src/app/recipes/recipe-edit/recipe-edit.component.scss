@@ -26,11 +26,16 @@
 }
 
 .form-group-img {
-  width: 300px;
+  width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.img-responsive {
+  max-width: 300px;
+
 }
 
 .form-group-description {

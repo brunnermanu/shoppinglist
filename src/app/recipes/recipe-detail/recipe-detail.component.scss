@@ -25,11 +25,13 @@
   }
 
   &__description {
-    text-align: center;
+    //text-align: center;
   }
 
   &__list {
     list-style-type: none;
+    padding:0px;
+    margin: 40px 0px;
   }
 
   &__list-item {
