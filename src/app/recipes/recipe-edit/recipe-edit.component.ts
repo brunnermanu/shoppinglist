@@ -42,6 +42,10 @@ export class RecipeEditComponent implements OnInit {
     this.onCancel();
   }
 
+  onCancel() {
+    this.router.navigate(['../'], {relativeTo: this.route});
+  }
+
   onAddIngredient() {
     (this.recipeForm.get('ingredients') as FormArray).push(
       new FormGroup({
@@ -54,8 +58,8 @@ export class RecipeEditComponent implements OnInit {
     );
   }
 
-  onCancel() {
-    this.router.navigate(['../'], {relativeTo: this.route});
+  onDeleteIngredient(index: number) {
+    (this.recipeForm.get('ingredients') as FormArray).removeAt(index);
   }
 
   get controls() { // a getter!

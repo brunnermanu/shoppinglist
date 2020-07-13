@@ -1,16 +1,20 @@
 .recipe-area {
   text-decoration: none;
   color: black;
-  padding: 20px;
+  padding: 10px 30px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  border: 0.5px solid lightgrey;
+  justify-content: space-between;
+  border: 0.5px solid grey;
   border-radius: 4px;
   background-color: white;
   margin-bottom: 5px;
 
+}
+
+.image {
+  height: 80px;
 }
 
 .recipe-area:hover {

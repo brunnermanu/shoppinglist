@@ -8,7 +8,8 @@ import { Subject } from 'rxjs';
 
 @Injectable()
 export class RecipeService {
-recipesChanged = new Subject<Recipe[]>();
+  recipesChanged = new Subject<Recipe[]>();
+
 
   private recipes: Recipe[] = [
     new Recipe('Älplermagronen',
@@ -16,16 +17,16 @@ recipesChanged = new Subject<Recipe[]>();
       'https://res.cloudinary.com/swissmilk/image/fetch/q_auto,f_auto/' +
       'https://api.swissmilk.ch/wp-content/uploads/2019/05/ss-alltagsrezepte-winter-geschmortes-wintergemuese-mit-poulet.jpg',
       [
-        new Ingredient(300, 'gr', 'Teigwaren', 1),
-        new Ingredient(2, 'stk', 'Zwiebeln',  2)
+        new Ingredient(300, 'gr', 'Teigwaren', 'Teigwaren'),
+        new Ingredient(2, 'stk', 'Zwiebeln',  'Gemüse')
       ]),
     new Recipe('Thaicurry',
       'This is simply a Test',
       'https://res.cloudinary.com/swissmilk/image/fetch/q_auto,f_auto/' +
       'https://api.swissmilk.ch/wp-content/uploads/2019/05/ss-alltagsrezepte-winter-geschmortes-wintergemuese-mit-poulet.jpg',
       [
-        new Ingredient(5, 'Stück', 'Kartoffeln', 1),
-        new Ingredient(200, 'Gr', 'Reis', 2)
+        new Ingredient(5, 'Stück', 'Kartoffeln', 'fruits'),
+        new Ingredient(200, 'Gr', 'Reis', 'else')
       ]),
   ];
 
