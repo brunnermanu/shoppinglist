@@ -8,17 +8,25 @@
   align-items: center;
 
 
-  &__name,
-  &__name-input {
+  &__name {
     width: 200px
+  }
+  &__name-input {
+    width: 180px
   }
   &__amount,
   &__unit {
-    width: 90px;
+    width: 70px;
   }
   &__amount-input,
   &__unit-input{
-    width: 70px;
+    width: 60px;
+  }
+  &__category {
+    width:40px;
+  }
+  &__category-input {
+    width:35px;
   }
 
   &__button-area {
