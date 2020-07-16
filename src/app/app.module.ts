@@ -18,6 +18,9 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { ButtonSubmitComponent } from './button-submit/button-submit.component';
 import { ButtonXComponent } from './button-x/button-x.component';
+import { CategoryEditComponent } from './category-edit/category-edit.component';
+import {CategoryService} from './category-edit/category.service';
+
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { ButtonXComponent } from './button-x/button-x.component';
     RecipeStartComponent,
     RecipeEditComponent,
     ButtonSubmitComponent,
-    ButtonXComponent
+    ButtonXComponent,
+    CategoryEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { ButtonXComponent } from './button-x/button-x.component';
   ],
   providers: [
     ShoppingListService,
-    RecipeService
+    RecipeService,
+    CategoryService
   ],
   bootstrap: [AppComponent]
 })

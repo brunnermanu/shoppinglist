@@ -64,12 +64,18 @@
           formControlName="name">
       </div>
       <div class="ingredient-area-category">
-        <label for="ingredient">Category</label>
-        <input
-          type="number"
+        <label for="category">Category</label>
+        <select
+          class="form-edit__category-input"
           id="category"
-          class="form-control"
-          formControlName="category">
+          name="category"
+          formControlName="category"
+          required
+          type="text">
+          <option *ngFor="let category of categories; let i = index"
+                  [value]="categories[i]">{{categories[i]}}
+          </option>
+        </select>
       </div>
       <app-button-x  [delete]="true" [buttonName]="'X'" (click)="onDeleteIngredient(i)"></app-button-x>
     </div>

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Params, Router} from '@angular/router';
-import {FormArray, FormControl, FormGroup, Validator, Validators} from '@angular/forms';
+import { ActivatedRoute, Params, Router } from '@angular/router';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
+import { ShoppingListService } from '../../shopping-list/shopping-list.service';
+import { of } from 'rxjs';
 
 
 @Component({
@@ -10,10 +12,22 @@ import { RecipeService } from '../recipe.service';
   styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
-
+  categories = [];
+  private form: any;
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
-              private router: Router) { }
+              private shoppingListService: ShoppingListService,
+              private formBuilder: FormBuilder,
+              private router: Router) {
+    this.form = this.formBuilder.group({
+      categories: ['']
+    });
+    // async orders
+    of(this.getCategories()).subscribe(categories => {
+      this.categories = categories;
+      this.form.controls.categories.patchValue(this.categories[0].category);
+    });
+  }
   id: number;
   editMode = false;
   recipeForm: FormGroup;
@@ -64,6 +78,10 @@ export class RecipeEditComponent implements OnInit {
 
   get controls() { // a getter!
     return (this.recipeForm.get('ingredients') as FormArray).controls;
+  }
+
+  getCategories() {
+    return this.shoppingListService.categories;
   }
 
   private initForm() {
