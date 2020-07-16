@@ -36,23 +36,27 @@
     </div>
       <div class="form-edit__category">
         <label for="category">Category</label>
-        <input
+        <select
           class="form-edit__category-input"
           id="category"
           name="category"
           ngModel
           required
-          type="text"
-        >
+          type="text">
+          <option *ngFor="let category of categories; let i = index"
+                  [value]="categories[i].category">{{categories[i].category}}
+          </option>
+        </select>
       </div>
     </div>
     <div class="form-edit__button-area">
       <app-button-submit [add]="true" [buttonName]="editMode ? 'Update' : 'Add'" [disabledValue]="!f.valid"></app-button-submit>
-      <app-button [clear]="true" [buttonName]="'clear'" (click)="onClear()"></app-button>
+      <app-button [clear]="true" [buttonName]="'Clear'" (click)="onClear()"></app-button>
       <app-button  [delete]="true"
-                   [buttonName]="'delete'"
+                   [buttonName]="'Delete'"
                    (click)="onDelete()"
                    *ngIf="editMode"></app-button>
+      <app-button [clear]="true" [buttonName]="'Edit Category'" (click)="onEditCategory()"></app-button>
     </div>
   </form>
 </div>
