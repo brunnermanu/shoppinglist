@@ -25,8 +25,8 @@ export class RecipeService {
       'https://res.cloudinary.com/swissmilk/image/fetch/q_auto,f_auto/' +
       'https://api.swissmilk.ch/wp-content/uploads/2019/05/ss-alltagsrezepte-winter-geschmortes-wintergemuese-mit-poulet.jpg',
       [
-        new Ingredient(5, 'Stück', 'Kartoffeln', 'fruits'),
-        new Ingredient(200, 'Gr', 'Reis', 'else')
+        new Ingredient(5, 'Stück', 'Kartoffeln', 'Früchte'),
+        new Ingredient(200, 'Gr', 'Reis', 'Sonstiges')
       ]),
   ];
 

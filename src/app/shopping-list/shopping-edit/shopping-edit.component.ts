@@ -1,8 +1,11 @@
 import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import {FormBuilder, FormGroup, FormsModule, NgForm} from '@angular/forms';
+import {of, Subscription} from 'rxjs';
 import { Ingredient} from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {CategoryService} from '../../category-edit/category.service';
+import {Categories} from '../../shared/category.model';
 
 
 @Component({
@@ -16,8 +19,23 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;
+  categories: Categories[] = [];
+  private form: FormGroup;
 
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private shoppingListService: ShoppingListService,
+              private categoryService: CategoryService,
+              private formBuilder: FormBuilder,
+              private route: ActivatedRoute,
+              private router: Router) {
+    this.form = this.formBuilder.group({
+      categories: ['']
+    });
+    // async orders
+    of(this.getCategories()).subscribe(categories => {
+      this.categories = categories;
+      this.form.controls.categories.patchValue(this.categories[0].category);
+    });
+  }
 
   ngOnInit() {
     this.subscription = this.shoppingListService.startedEditing
@@ -57,9 +75,15 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.shoppingListService.deleteIngredient(this.editedItemIndex);
     this.onClear();
   }
+  getCategories() {
+    return this.categoryService.categories;
+  }
+
+  onEditCategory() {
+    this.router.navigate(['category-edit']);
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
 }
