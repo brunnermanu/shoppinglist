@@ -4,6 +4,7 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 import { RecipeService } from '../recipe.service';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { of } from 'rxjs';
+import {CategoryService} from '../../category-edit/category.service';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class RecipeEditComponent implements OnInit {
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
               private shoppingListService: ShoppingListService,
+              private categoryService: CategoryService,
               private formBuilder: FormBuilder,
               private router: Router) {
     this.form = this.formBuilder.group({
@@ -81,7 +83,7 @@ export class RecipeEditComponent implements OnInit {
   }
 
   getCategories() {
-    return this.shoppingListService.categories;
+    return this.categoryService.categories;
   }
 
   private initForm() {

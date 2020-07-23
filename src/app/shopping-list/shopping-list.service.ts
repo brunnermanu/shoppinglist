@@ -1,5 +1,5 @@
 import { Ingredient } from '../shared/ingredient.model';
-import { Subject } from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import { CategoryService } from '../category-edit/category.service';
 import { Injectable } from '@angular/core';
 
@@ -10,26 +10,14 @@ export class ShoppingListService {
   // Improve plural naming
   categories: string[];
 
-  testCategories = [
-    'Früchte',
-    'Gemüse',
-    'Brot',
-    'Milch',
-    'Fleisch',
-    'Backen',
-    'Teigwaren',
-    'Sonstiges',
-  ];
-
   constructor(private categoryService: CategoryService) {
 
     this.categories = this.categoryService.categories.map(item => item.category);
-    console.log('this.categories', this.categories);
-    console.log('this.testCategories', this.testCategories);
+    this.categoryService.getCategories().subscribe(categories => {
+      this.categories = categories.map(item => item.category);
+      console.log('this.categories IN our new awesome method', this.categories);
+    });
   }
-
-  // category array von vorhin nochmals hierhin schreiben und die Lösungen vergleichen
-
 
   private ingredients: Ingredient[] = [
     new Ingredient(200, 'gr', 'Spaghetti', 'Teigwaren'),
@@ -37,10 +25,14 @@ export class ShoppingListService {
   ];
 
   getIngredients() {
-    return this.ingredients.sort(
+    const sortedItems = this.ingredients.sort(
       (a, b) =>
         this.categories.indexOf(a.category) - this.categories.indexOf(b.category)
     ).slice();
+    return this.ingredients.sort(
+      (a, b) =>
+        this.categories.indexOf(a.category) - this.categories.indexOf(b.category)
+    );
   }
 
   getIngredient(index: number) {

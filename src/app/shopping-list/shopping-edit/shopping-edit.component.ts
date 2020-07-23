@@ -16,10 +16,12 @@ import {Categories} from '../../shared/category.model';
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f')shoppingListForm: NgForm;
   subscription: Subscription;
+  subscriptionTwo: Subscription;
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;
   categories: Categories[] = [];
+  ingredients: Ingredient[];
   private form: FormGroup;
 
   constructor(private shoppingListService: ShoppingListService,
@@ -31,7 +33,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
       categories: ['']
     });
     // async orders
-    of(this.getCategories()).subscribe(categories => {
+    of(this.getCategoryList()).subscribe(categories => {
       this.categories = categories;
       this.form.controls.categories.patchValue(this.categories[0].category);
     });
@@ -75,7 +77,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     this.shoppingListService.deleteIngredient(this.editedItemIndex);
     this.onClear();
   }
-  getCategories() {
+  getCategoryList() {
     return this.categoryService.categories;
   }
 

@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="formular">
+    <form (ngSubmit)="onAddCategoryItem(f)" #f="ngForm">
+      <div class="form-edit">
+        <div class="form-edit__name">
+          <label for="category">Category-Name</label>
+          <input
+            class="form-edit__name-input"
+            id="category"
+            name="category"
+            ngModel
+            required
+            type="text"
+          >
+        </div>
+      </div>
+      <div class="form-edit__button-area">
+        <app-button-submit [add]="true" [buttonName]="editMode ? 'Update' : 'Add'" [disabledValue]="!f.valid"></app-button-submit>
+        <app-button [clear]="true" [buttonName]="'Clear'" (click)="onClear()"></app-button>
+        <app-button  [delete]="true"
+                     [buttonName]="'Delete'"
+                     (click)="onDelete()"
+                     *ngIf="editMode"></app-button>
+      </div>
+    </form>
+    <hr>
+    <ul class="list__group">
+      <a class="list__group-item"
+         *ngFor="let category of categories; let i = index"
+         (click)="onEditCategory(i)">
+         {{category.category}}
+      </a>
+    </ul>
+  </div>
+</div>
