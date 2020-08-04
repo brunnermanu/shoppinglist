@@ -9,9 +9,8 @@ import { ShoppingListService } from './shopping-list.service';
   styleUrls: ['./shopping-list.component.scss'],
 })
 export class ShoppingListComponent implements OnInit, OnDestroy {
-  @Input() index: number;
-  @Input() routerLinkActive: string;
   ingredients: Ingredient[];
+  clickedIdx: number;
 
   private subscription: Subscription;
 
@@ -29,6 +28,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   onEditItem(index: number) {
+    this.clickedIdx = index;
     this.shoppingListService.startedEditing.next(index);
   }
 
