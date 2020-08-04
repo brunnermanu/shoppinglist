@@ -5,6 +5,7 @@ import { RecipeService } from '../recipe.service';
 import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { of } from 'rxjs';
 import {CategoryService} from '../../category-edit/category.service';
+import {Categories} from '../../shared/category.model';
 
 
 @Component({
@@ -13,7 +14,7 @@ import {CategoryService} from '../../category-edit/category.service';
   styleUrls: ['./recipe-edit.component.scss']
 })
 export class RecipeEditComponent implements OnInit {
-  categories = [];
+  categories: Categories[] = [];
   private form: any;
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,

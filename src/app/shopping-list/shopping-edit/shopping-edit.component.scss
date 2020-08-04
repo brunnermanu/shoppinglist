@@ -16,22 +16,24 @@
   }
   &__amount,
   &__unit {
-    width: 70px;
+    width: 54px;
   }
   &__amount-input,
   &__unit-input{
-    width: 60px;
+    width: 40px;
   }
   &__category {
-    width:40px;
+    width:100px;
   }
   &__category option {
     font-family: 'Raleway', sans-serif;
     font-size: medium;
   }
   &__category-input {
-    width:60px;
-    height: 30px;
+    width:90px;
+    height: 31px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
   }
 
   &__button-area {
@@ -45,9 +47,13 @@
 
   }
 }
-input {
-  height: 25px;
-  font-family: 'Raleway', sans-serif;
-  font-size: medium;
+.form-edit input {
+   height: 25px;
+   font-family: 'Raleway', sans-serif;
+   font-size: medium;
+ }
+.form-edit label {
+  font-size: 13px;
+  padding-left: 3px;
 }
 

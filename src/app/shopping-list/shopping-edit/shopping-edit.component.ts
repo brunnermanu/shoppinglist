@@ -16,7 +16,6 @@ import {Categories} from '../../shared/category.model';
 export class ShoppingEditComponent implements OnInit, OnDestroy {
   @ViewChild('f')shoppingListForm: NgForm;
   subscription: Subscription;
-  subscriptionTwo: Subscription;
   editMode = false;
   editedItemIndex: number;
   editedItem: Ingredient;

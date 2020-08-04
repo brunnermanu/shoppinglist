@@ -54,6 +54,7 @@
 }
 
 .form-group-ingredient {
+  width: 400px;
   height: 80px;
   display: flex;
   flex-direction: row;
@@ -62,14 +63,14 @@
 }
 
 .ingredient-area-name {
-  width: 160px
+  width: 140px
 }
 .ingredient-area-amount,
 .ingredient-area-unit  {
   width: 60px;
   }
 .ingredient-area-category {
-  width: 40px;
+  width: 100px;
 }
 
 .ingredient-area-amount #amount,
@@ -81,21 +82,21 @@
 }
 
 .ingredient-area-name #ingredient {
-  width: 150px;
+  width: 130px;
   height: 25px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
 
 .ingredient-area-category #category {
-  width: 30px;
-  height: 25px;
+  width: 90px;
+  height: 31px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
 
 app-button-x {
-  margin-left: 30px;
+  margin-left: 0px;
 }
 
 input.ng-invalid.ng-touched,

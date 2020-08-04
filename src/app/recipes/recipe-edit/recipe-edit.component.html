@@ -73,7 +73,7 @@
           required
           type="text">
           <option *ngFor="let category of categories; let i = index"
-                  [value]="categories[i]">{{categories[i]}}
+                  [value]="categories[i].category">{{categories[i].category}}
           </option>
         </select>
       </div>

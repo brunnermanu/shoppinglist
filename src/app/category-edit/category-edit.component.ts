@@ -51,33 +51,33 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
       );
   }
 
-onAddCategoryItem(form: NgForm) {
-    const value = form.value;
-    const newCategory = new Categories(value.category);
-    if (this.editMode) {
-      this.categoryService.updateCategories(this.editedCategoryIndex, newCategory);
-    } else {
-      this.categoryService.addCategory(newCategory);
+  onAddCategoryItem(form: NgForm) {
+      const value = form.value;
+      const newCategory = new Categories(value.category);
+      if (this.editMode) {
+        this.categoryService.updateCategories(this.editedCategoryIndex, newCategory);
+      } else {
+        this.categoryService.addCategory(newCategory);
+      }
+      this.editMode = false;
+      form.reset();
     }
-    this.editMode = false;
-    form.reset();
-  }
 
-onClear() {
-    this.categoryForm.reset();
-    this.editMode = false;
-  }
+  onClear() {
+      this.categoryForm.reset();
+      this.editMode = false;
+    }
 
-onDelete() {
-    this.categoryService.deleteCategory(this.editedCategoryIndex);
-    this.onClear();
-  }
-onEditCategory(index: number) {
-    this.categoryService.startedEditing.next(index);
-  }
+  onDelete() {
+      this.categoryService.deleteCategory(this.editedCategoryIndex);
+      this.onClear();
+    }
+  onEditCategory(index: number) {
+      this.categoryService.startedEditing.next(index);
+    }
 
-ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {
+      this.subscription.unsubscribe();
+    }
 
 }
