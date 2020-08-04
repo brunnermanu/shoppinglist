@@ -12,7 +12,7 @@
     max-width: 400px;
   }
   &__group {
-    width:400px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -20,9 +20,11 @@
     align-content: center;
     align-items: center;
     padding: 0px;
+    list-style: none;
   }
 
   &__group-item {
+    cursor: pointer;
     background-color: white;
     width: 250px;
     border: solid 1px black;
@@ -34,8 +36,6 @@
 
 }
 .active {
-  //box-shadow:  2px 2px 4px 4px rgba(0, 0, 0, 0.2);
-  //background-color: rgba(0,0,0,0.02);
   border: 2px solid #0505b2;
 }
 

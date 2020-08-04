@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, NgForm} from '@angular/forms';
 import {of, Subscription} from 'rxjs';
 import { Ingredient} from '../../shared/ingredient.model';
