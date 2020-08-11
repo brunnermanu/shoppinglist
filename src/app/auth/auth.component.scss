@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.loading {
+  margin-top: 100px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.error {
+  width: 400px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  border: 1px solid red;
+  color: red;
+  background-color: rgba(254, 23, 12, 0.2);
+}
+.formular {
+  width: 400px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+  &__mail {
+    margin: 20px 0px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: flex-start;
+  }
+  &__button-area {
+    margin-top:40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+  }
+  &__button-area-login {
+      color: white;
+      display: block;
+      border-radius: 3px;
+      border: 1px solid black;
+      padding: 6px;
+      outline: none;
+      transition: 0.2s ease-in-out;
+      margin: 10px 10px;
+      width: 110px;
+      font-size: 12px;
+      font-weight: 200;
+      background: linear-gradient(90deg, rgb(61, 17, 255), rgb(20, 134, 253));
+  }
+}
+
+input {
+  height: 30px;
+  width: 300px;
+  font-family: 'Raleway', sans-serif;
+  font-size: medium;
+}
+
+.switch {
+  background: linear-gradient(90deg, rgb(6, 124, 255), rgb(5, 228, 255));
+}
+
+.switch:hover {
+  background: linear-gradient(90deg, rgb(6, 99, 198), rgb(5, 228, 255));
+}
+
+button:hover{
+  cursor: pointer;
+  border-color: black;
+  outline: none;
+  background: linear-gradient(90deg, rgb(5, 2, 143), rgb(5, 104, 255));
+}
