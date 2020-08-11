@@ -3,8 +3,8 @@
   <ul class="header-nav-bar-ul header-nav-bar-left">
     <li class="header-nav-bar-left__dropdown">
       <ul class="header-nav-bar-left__dropdown-menu">
-        <li class="header-nav-bar-left__li"><a style="cursor: pointer">Save Data</a></li>
-        <li class="header-nav-bar-left__li"><a style="cursor: pointer">Fetch Data</a></li>
+        <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onSaveData()">Save Data</a></li>
+        <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onFetchData()">Fetch Data</a></li>
       </ul>
     </li>
   </ul>
@@ -21,6 +21,7 @@
     <ul class="header-nav-bar__ul">
       <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li>
       <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li>
+      <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth">Login</a></li>
     </ul>
   </div>
 

@@ -57,10 +57,10 @@
 
   .header-nav-bar {
     &__ul {
-      width: 250px;
+      width: 300px;
       display: flex;
       flex-direction: row;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       justify-content: space-evenly;
       color: black;
       padding: 0px;
