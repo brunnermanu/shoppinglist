@@ -13,7 +13,7 @@
 
   &__logo {
     text-align: center;
-    width: 250px;
+    width: 100px;
 
 
   }
@@ -25,8 +25,10 @@
 
   .header-nav-bar-left {
     text-decoration: none;
-    width: 250px;
+    width: 350px;
     padding: 0px;
+    display: flex;
+    flex-direction: row;
 
     &__dropdown {
       list-style-type: none;
@@ -35,6 +37,10 @@
 
     &__dropdown-menu ul {
       padding-inline-start: 0px;
+      list-style: none;
+    }
+    &__dropdown-menu ul li {
+      padding: 0px;
     }
 
     &__li {
@@ -57,7 +63,7 @@
 
   .header-nav-bar {
     &__ul {
-      width: 300px;
+      width: 350px;
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
