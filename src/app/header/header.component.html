@@ -9,7 +9,6 @@
     <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>
     <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>
   </ul>
-
   <div class="header__logo">
     <a href="#">
       <div class ="header__logo">
@@ -23,6 +22,4 @@
       <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/shopping-list" *ngIf="isAuthenticated">Shopping List</a></li>
     </ul>
   </div>
-
-
 </div>

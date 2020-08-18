@@ -9,13 +9,14 @@ import { CategoryEditComponent } from './category-edit/category-edit.component';
 import { RecipesResolverService } from './recipes/recipes-resolver.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthGuard } from './auth/auth.guard';
+import { CategoryResolverService } from './category-edit/category-resolver.service';
 
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full' },
-  { path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuard]},
-  { path: 'category-edit', component: CategoryEditComponent },
+  { path: 'shopping-list', component: ShoppingListComponent, canActivate: [AuthGuard], resolve: [CategoryResolverService]},
+  { path: 'category-edit', component: CategoryEditComponent, resolve: [CategoryResolverService] },
   { path: 'recipes', component: RecipesComponent, canActivate: [AuthGuard], children: [
       { path: '', component: RecipeStartComponent },
       { path: 'new', component: RecipeEditComponent },

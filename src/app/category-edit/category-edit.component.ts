@@ -31,7 +31,7 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.categories = this.categoryService.categories;
-    this.categoryService.getCategories().subscribe(categories => this.categories = categories);
+    this.categoryService.getUpdatedCategories().subscribe(categories => this.categories = categories);
     this.subscription = this.categoryService.categoriesChanged
       .subscribe(
         (categories: Categories[]) => {

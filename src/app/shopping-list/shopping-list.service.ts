@@ -3,6 +3,7 @@ import { Subject } from 'rxjs';
 import { CategoryService } from '../category-edit/category.service';
 import { Injectable } from '@angular/core';
 
+
 @Injectable()
 export class ShoppingListService {
   ingredientsChanged = new Subject<Ingredient[]>();
@@ -12,16 +13,18 @@ export class ShoppingListService {
 
   constructor(private categoryService: CategoryService) {
     this.categories = this.categoryService.categories.map(item => item.category);
-    this.categoryService.getCategories().subscribe(categories => {
+    this.categoryService.getUpdatedCategories().subscribe(categories => {
       this.categories = categories.map(item => item.category);
       console.log('this.categories IN our new awesome method', this.categories);
     });
   }
 
-  private ingredients: Ingredient[] = [
-    new Ingredient(200, 'gr', 'Spaghetti', 'Teigwaren'),
-    new Ingredient(5, 'stk', 'Äpfel', 'Früchte'),
-  ];
+  private ingredients: Ingredient[] = [];
+
+  setIngredients(ingredients: Ingredient[]) {
+    this.ingredients = ingredients;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
 
   getIngredients() {
       return this.ingredients.sort(

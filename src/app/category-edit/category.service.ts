@@ -2,6 +2,7 @@
 import { Injectable } from '@angular/core';
 import { Categories } from '../shared/category.model';
 import { Subject } from 'rxjs';
+import {Recipe} from '../recipes/recipe.model';
 
 
 
@@ -11,25 +12,28 @@ export class CategoryService {
   categoriesChanged = new Subject<Categories[]>();
   startedEditing = new Subject<number>();
 
-  categories: Categories[] = [
-    new Categories('Früchte'),
-    new Categories('Gemüse'),
-    new Categories('Brot'),
-    new Categories('Milch'),
-    new Categories('Fleisch'),
-    new Categories('Backen'),
-    new Categories('Teigwaren'),
-    new Categories('Sonstiges'),
-  ];
+  categories: Categories[] = [];
+
+  // categories: Categories[] = [
+  //   new Categories('Sonstiges'),
+  // ];
+
+  // method to overwrite the existing recipes
+  setCategories(categories: Categories[]) {
+    this.categories = categories;
+    this.categoriesChanged.next(this.categories.slice());
+  }
 
   getCategories() {
-    // return this.categories.slice();
-    // Todo: Look up asObservable
-    return this.categoriesChanged.asObservable();
+    return this.categories.slice();
   }
 
   getCategory(index: number) {
     return this.categories[index];
+  }
+
+  getUpdatedCategories() {
+    return this.categoriesChanged.asObservable();
   }
 
   updateCategories(index: number, newCategory: Categories) {
