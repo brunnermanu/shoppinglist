@@ -14,6 +14,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription;
 
+
   constructor(private shoppingListService: ShoppingListService) {
   }
 

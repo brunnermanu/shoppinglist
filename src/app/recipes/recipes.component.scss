@@ -9,7 +9,24 @@
   margin: 0 auto 0 auto;
 }
 
+@media (max-width: 830px) {
+  .recipes {
+    width: auto;
+  }
+}
 
+@media (max-width: 650px) {
+  .recipes {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    margin: 0 auto 0 auto;
+  }
 
+}
 
 
