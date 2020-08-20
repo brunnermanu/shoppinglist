@@ -39,3 +39,20 @@
   }
 }
 
+@media (max-width: 650px) {
+  .detail-area {
+    margin-top: 50px;
+
+    &__img {
+      margin-top: 20px;
+      max-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 830px) {
+  .detail-area {
+    width: 250px;
+  }
+}
+

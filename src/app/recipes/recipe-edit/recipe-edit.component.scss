@@ -103,3 +103,69 @@ input.ng-invalid.ng-touched,
 textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
+
+@media (max-width: 830px) {
+  .row {
+    width: 250px;
+  }
+  .form-group input {
+    width: 250px;
+  }
+
+  .form-group-img {
+    width: 250px;
+  }
+
+  .img-responsive {
+    max-width: 250px;
+  }
+
+  .form-group-description {
+    width: 250px;
+  }
+
+  .form-group-description textarea {
+    width: 250px;
+  }
+
+  .form-group-ingredient {
+    width: 250px;
+  }
+  .form-group-ingredient label {
+    font-size: 10px;
+  }
+
+  .ingredient-area-name {
+    width: 90px
+  }
+  .ingredient-area-amount,
+  .ingredient-area-unit  {
+    width: 39px;
+  }
+  .ingredient-area-category {
+    width: 70px;
+  }
+
+  .ingredient-area-amount #amount,
+  .ingredient-area-unit #unit {
+    width: 29px;
+    font-size: 14px;
+  }
+
+  .ingredient-area-name #ingredient {
+    width: 79px;
+    font-size: 14px;
+  }
+
+  .ingredient-area-category #category {
+    width: 59px;
+    font-size: 14px;
+  }
+
+}
+
+@media (max-width: 650px) {
+  .row {
+    margin-top: 50px;
+  }
+}

@@ -31,14 +31,21 @@
     border-radius: 5px;
     padding: 7px;
     margin-bottom: 5px;
+    input[type="checkbox"]:checked + label {
+        color: lightgrey;
+    }
   }
 
 
 }
 .active {
-  border: 2px solid #0505b2;
+  border: 1px solid #0505b2;
 }
 
-
+@media (max-width: 830px) {
+  .list {
+    width: 250px;
+  }
+}
 
 

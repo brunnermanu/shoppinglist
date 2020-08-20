@@ -34,7 +34,13 @@ export class DataStorageService {
         'https://shoppinglist-bb6ef.firebaseio.com/recipes.json'
       ).pipe(
         map(recipes => {
-          return recipes ? recipes : [];
+          if (recipes) {
+            return recipes.map( recipe => {
+              return {...recipe, ingredients: recipe.ingredients ? recipe.ingredients : []};
+            });
+          } else {
+            return [];
+          }
         }),
         tap(recipes => {
           this.recipeService.setRecipes(recipes);
@@ -56,13 +62,20 @@ export class DataStorageService {
     return this.http
       .get<Ingredient[]>(
         'https://shoppinglist-bb6ef.firebaseio.com/shoppinglist.json')
-      .pipe(map(shoppingList => {
-        return shoppingList ? shoppingList : [];
-      }))
-      .subscribe(
-          ingredients => {
+      .pipe(
+        map(ingredients => {
+          if (ingredients) {
+            return ingredients.map(ingredient => {
+                return {...ingredient, unit: ingredient.unit ? ingredient.unit : ''};
+              });
+          } else {
+            return [];
+          }
+      }),
+        tap(ingredients => {
           this.shoppingListService.setIngredients(ingredients);
-      });
+        })
+      );
   }
 
   storeCategories() {

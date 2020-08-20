@@ -1,27 +1,28 @@
 <div class="detail-area">
-    <div class="detail-area__img-area">
-      <img [src]="recipe.imagePath" class="detail-area__img">
-    </div>
-    <div>
-      <h3 class="detail-area__title">{{ recipe.name }}</h3>
-    </div>
-
-    <div>
-      <ul class="detail-area__list">
-        <li class="detail-area__list-item"
-        *ngFor="let ingredient of recipe.ingredients">
-          {{ ingredient.amount }} {{ ingredient.unit }} - {{ ingredient.name }} | {{ingredient.category}}
-          <hr>
-        </li>
-      </ul>
-    </div>
-
-  <div>
-    <p class="detail-area__description">{{ recipe.description }}</p>
+  <div class="detail-area__img-area">
+    <img [src]="recipe.imagePath" class="detail-area__img">
   </div>
+  <div>
+    <h3 class="detail-area__title">{{ recipe.name }}</h3>
+  </div>
+
   <div class="detail-area__btn-area">
     <app-button [add]="true" [buttonName]="'add to Shopping List'" (click)="onAddToShoppingList()"></app-button>
     <app-button [add]="true" [buttonName]="'Edit Recipe'" (click)="onEditRecipe()"></app-button>
     <app-button [delete]="true" [buttonName]="'delete Recipe'" (click)="onDeleteRecipe()"></app-button>
+  </div>
+
+  <div>
+    <ul class="detail-area__list">
+      <li class="detail-area__list-item"
+      *ngFor="let ingredient of recipe.ingredients">
+        {{ ingredient.amount }} {{ ingredient.unit }} - {{ ingredient.name }} | {{ingredient.category}}
+        <hr>
+      </li>
+    </ul>
+  </div>
+
+  <div>
+    <p class="detail-area__description">{{ recipe.description }}</p>
   </div>
 </div>

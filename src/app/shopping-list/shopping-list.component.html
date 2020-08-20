@@ -8,7 +8,7 @@
         [class.active]="idx === clickedIdx"
         *ngFor="let ingredient of ingredients; let idx = index"
         (click)="onEditItem(idx)">
-       {{ ingredient.amount }} {{ ingredient.unit }}, {{ ingredient.name }} | {{ingredient.category}}
+      {{ ingredient.amount }} {{ ingredient.unit }}, {{ ingredient.name }} | {{ingredient.category}}
     </li>
   </ul>
 

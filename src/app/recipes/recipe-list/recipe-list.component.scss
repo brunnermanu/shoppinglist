@@ -12,5 +12,14 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
+
+
+@media (max-width: 830px) {
+  .recipe-list {
+    width: 250px;
+  }
+}
+
+

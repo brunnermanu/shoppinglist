@@ -1,9 +1,6 @@
 <div class="row">
   <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
-    <div class="button-area">
-      <app-button-submit [add]="true" [buttonName]="'Save'"></app-button-submit>
-      <app-button [delete]="true" [buttonName]="'Cancel'" (click)="onCancel()"></app-button>
-    </div>
+
     <div class="form-group">
       <label for="name">Name</label>
       <input
@@ -35,54 +32,61 @@
         class="form-control"
         formControlName="description"></textarea>
     </div>
-<div formArrayName="ingredients">
-    <div class="form-group-ingredient"
-         *ngFor="let ingredientCtrl of controls; let i = index"
-          [formGroupName]="i">
-      <div class="ingredient-area-amount">
-        <label for="amount">Amount</label>
-        <input
-          type="text"
-          id="amount"
-          class="form-control"
-          formControlName="amount">
+<!--    <div class="button-area">-->
+<!--      <app-button [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button>-->
+<!--    </div>-->
+    <div formArrayName="ingredients">
+        <div class="form-group-ingredient"
+             *ngFor="let ingredientCtrl of controls; let i = index"
+              [formGroupName]="i">
+          <div class="ingredient-area-amount">
+            <label for="amount">Amount</label>
+            <input
+              type="text"
+              id="amount"
+              class="form-control"
+              formControlName="amount">
+          </div>
+          <div class="ingredient-area-unit">
+            <label for="unit">Unit</label>
+            <input
+              type="text"
+              id="unit"
+              class="form-control"
+              formControlName="unit">
+          </div>
+          <div class="ingredient-area-name">
+            <label for="ingredient">Ingredient</label>
+            <input
+              type="text"
+              id="ingredient"
+              class="form-control"
+              formControlName="name">
+          </div>
+
+          <div class="ingredient-area-category">
+            <label for="category">Category</label>
+            <select
+              class="form-edit__category-input"
+              id="category"
+              name="category"
+              formControlName="category"
+              required
+              type="text">
+              <option *ngFor="let category of categories; let i = index"
+                      [value]="categories[i].category">{{categories[i].category}}
+              </option>
+            </select>
+          </div>
+          <app-button-x  [delete]="true" [buttonName]="'X'" (click)="onDeleteIngredient(i)"></app-button-x>
+        </div>
+      <hr>
+      <div class="button-area">
+        <app-button [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button>
+        <app-button-submit [add]="true" [buttonName]="'Save and go back'"></app-button-submit>
+        <app-button [delete]="true" [buttonName]="'Cancel'" (click)="onCancel()"></app-button>
       </div>
-      <div class="ingredient-area-unit">
-        <label for="unit">Unit</label>
-        <input
-          type="text"
-          id="unit"
-          class="form-control"
-          formControlName="unit">
-      </div>
-      <div class="ingredient-area-name">
-        <label for="ingredient">Ingredient</label>
-        <input
-          type="text"
-          id="ingredient"
-          class="form-control"
-          formControlName="name">
-      </div>
-      <div class="ingredient-area-category">
-        <label for="category">Category</label>
-        <select
-          class="form-edit__category-input"
-          id="category"
-          name="category"
-          formControlName="category"
-          required
-          type="text">
-          <option *ngFor="let category of categories; let i = index"
-                  [value]="categories[i].category">{{categories[i].category}}
-          </option>
-        </select>
-      </div>
-      <app-button-x  [delete]="true" [buttonName]="'X'" (click)="onDeleteIngredient(i)"></app-button-x>
+
     </div>
-  <hr>
-  <div class="button-area">
-    <app-button [add]="true" [buttonName]="'Add Ingredient'" (click)="onAddIngredient()"></app-button>
-  </div>
-</div>
   </form>
 </div>
