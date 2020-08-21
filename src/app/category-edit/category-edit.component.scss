@@ -1,3 +1,4 @@
+@import './src/styles';
 .container {
   display: flex;
   justify-content: center;
@@ -73,3 +74,48 @@ input {
     margin-bottom: 5px;
   }
 }
+
+//@include large {
+//  .formular {
+//    width: 300px;
+//
+//  }
+//}
+
+@include medium {
+  .formular {
+    width: 300px;
+  }
+}
+  .form-edit {
+    &__name {
+      width: 250px
+    }
+
+    &__name-input {
+      width: 250px
+    }
+  }
+
+  .list {
+    width: 300px;
+
+
+    &__edit {
+      max-width: 300px;
+    }
+    &__group {
+      width:300px;
+
+    }
+
+    &__group-item {
+      background-color: white;
+      width: 250px;
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 7px;
+      margin-bottom: 5px;
+    }
+
+  }

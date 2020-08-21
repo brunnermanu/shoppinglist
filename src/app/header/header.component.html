@@ -8,12 +8,11 @@
   <div class ="header__logo">
     <img src="../assets/img/pineapple.png" class= "header__img" alt="Logo" style="max-height: 80px;">
   </div>
-
+  <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>
   <div class="header-nav-bar">
     <ul class="header-nav-bar__ul">
       <div class="header-nav-bar__group">
         <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>
-        <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>
       </div>
      <div class="header-nav-bar__group">
        <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a></li>
