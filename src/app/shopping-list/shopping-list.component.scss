@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .list {
   width: 400px;
   display: flex;
@@ -11,6 +13,7 @@
   &__edit {
     max-width: 400px;
   }
+
   &__group {
     width: 400px;
     display: flex;
@@ -42,10 +45,22 @@
   border: 1px solid #0505b2;
 }
 
-@media (max-width: 830px) {
+@include large {
   .list {
-    width: 250px;
+    width: 100%;
+
+    &__group {
+      width: 250px;
+    }
+
+    &__group-item {
+      width: 250px;
+    }
   }
 }
 
-
+@include medium {
+  .list {
+    width: auto;
+  }
+}

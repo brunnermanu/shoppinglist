@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .detail-area {
   width: 400px;
 
@@ -39,7 +41,13 @@
   }
 }
 
-@media (max-width: 650px) {
+@include large {
+  .detail-area {
+    width: 250px;
+  }
+}
+
+@include medium {
   .detail-area {
     margin-top: 50px;
 
@@ -50,9 +58,5 @@
   }
 }
 
-@media (max-width: 830px) {
-  .detail-area {
-    width: 250px;
-  }
-}
+
 

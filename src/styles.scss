@@ -7,8 +7,22 @@ body {
   background-color: rgba(0,0,0,0.02);
 }
 
+@mixin large {
+  @media (max-width: 830px ) {
+    @content;
+  }
+}
 
+@mixin medium {
+  @media (max-width: 650px ) {
+    @content;
+  }
+}
 
-
+@mixin small {
+  @media (max-width: 400px ) {
+    @content;
+  }
+}
 
 

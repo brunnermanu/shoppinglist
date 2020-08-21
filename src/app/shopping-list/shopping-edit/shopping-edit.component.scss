@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .form-edit {
   margin-top: 50px;
   display: flex;
@@ -57,3 +59,50 @@
   padding-left: 3px;
 }
 
+@include medium {
+  .form-edit {
+
+    &__name {
+      width: 100px
+    }
+    &__name-input {
+      width: 90px
+    }
+    &__amount,
+    &__unit {
+      width: 50px;
+    }
+    &__amount-input,
+    &__unit-input{
+      width: 40px;
+    }
+    &__category {
+      width:80px;
+    }
+    &__category option {
+      font-family: 'Raleway', sans-serif;
+      font-size: small;
+    }
+    &__category-input {
+      width:70px;
+      height: 31px;
+      font-family: 'Raleway', sans-serif;
+      font-size: 15px;
+    }
+
+    &__button-area {
+      margin-top:40px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+      align-content: center;
+      align-items: center;
+
+    }
+
+    .form-edit input {
+      font-size: small;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .row {
   width: 400px;
 }
@@ -104,7 +106,7 @@ textarea.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-@media (max-width: 830px) {
+@include large {
   .row {
     width: 250px;
   }
@@ -164,8 +166,9 @@ textarea.ng-invalid.ng-touched {
 
 }
 
-@media (max-width: 650px) {
+@include medium {
   .row {
+    width: auto;
     margin-top: 50px;
   }
 }

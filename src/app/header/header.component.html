@@ -1,25 +1,26 @@
 <div class="header">
-  <ul class="header-nav-bar-ul header-nav-bar-left">
-    <li class="header-nav-bar-left__dropdown" *ngIf="isAuthenticated">
-      <ul class="header-nav-bar-left__dropdown-menu">
-        <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onSaveData()">Save Data</a></li>
-<!--        <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onFetchData()">Fetch Data</a></li>-->
-      </ul>
-    </li>
-    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>
-    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>
-  </ul>
-  <div class="header__logo">
-    <a href="#">
-      <div class ="header__logo">
-        <img src="../assets/img/pineapple.png" class= "header__img" alt="Logo" style="max-height: 80px;">
-      </div>
-    </a>
+<!--  <ul class="header-nav-bar-ul header-nav-bar-left">-->
+<!--    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>-->
+<!--    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>-->
+<!--    <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onSaveData()" *ngIf="isAuthenticated">Save Data</a></li>-->
+<!--  </ul>-->
+
+  <div class ="header__logo">
+    <img src="../assets/img/pineapple.png" class= "header__img" alt="Logo" style="max-height: 80px;">
   </div>
+
   <div class="header-nav-bar">
     <ul class="header-nav-bar__ul">
-      <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a></li>
-      <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/shopping-list" *ngIf="isAuthenticated">Shopping List</a></li>
+      <div class="header-nav-bar__group">
+        <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>
+        <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>
+      </div>
+     <div class="header-nav-bar__group">
+       <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/recipes" *ngIf="isAuthenticated">Recipes</a></li>
+       <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/shopping-list" *ngIf="isAuthenticated">Shopping List</a></li>
+     </div>
     </ul>
   </div>
+<!--  <li class="header-nav-bar__li"><a style="cursor: pointer" (click)="onSaveData()" *ngIf="isAuthenticated">Save Data</a></li>-->
+  <app-button [add]="true" [buttonName]="'Save all Changes'" (click)="onSaveData()" *ngIf="isAuthenticated"></app-button>
 </div>

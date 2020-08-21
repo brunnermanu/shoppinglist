@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .recipe-list {
   display: flex;
   flex-direction: column;
@@ -16,7 +18,7 @@
 }
 
 
-@media (max-width: 830px) {
+@include large {
   .recipe-list {
     width: 250px;
   }

@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .recipe-area {
   height: 85px;
   text-decoration: none;
@@ -36,7 +38,7 @@
 }
 
 
-@media (max-width: 830px) {
+@include large {
   .recipe-area {
     height: 65px;
   }
@@ -51,7 +53,7 @@
   }
 }
 
-@media (max-width: 290px) {
+@include small {
   .recipe-area {
     height: 65px;
     padding: 5px 15px;

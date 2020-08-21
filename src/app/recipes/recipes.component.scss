@@ -1,3 +1,5 @@
+@import './src/styles';
+
 .recipes {
   max-width: 1200px;
   display: flex;
@@ -9,13 +11,13 @@
   margin: 0 auto 0 auto;
 }
 
-@media (max-width: 830px) {
+@include large {
   .recipes {
     width: auto;
   }
 }
 
-@media (max-width: 650px) {
+@include medium {
   .recipes {
     width: auto;
     display: flex;
