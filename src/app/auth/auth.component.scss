@@ -1,3 +1,4 @@
+@import './src/styles';
 .container {
   display: flex;
   justify-content: center;
@@ -86,4 +87,13 @@ button:hover{
   border-color: black;
   outline: none;
   background: linear-gradient(90deg, rgb(5, 2, 143), rgb(5, 104, 255));
+}
+
+@include small {
+  .loading,
+  .error,
+  .formular,
+  input {
+    width: 250px;
+  }
 }

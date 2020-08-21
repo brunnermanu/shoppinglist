@@ -4,9 +4,10 @@
     <app-loading-spinner></app-loading-spinner>
   </div>
   <form class="formular" #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
-    <div class="error" *ngIf="error">
-      <p>{{ error }}</p>
-    </div>
+<!--    <div class="error" *ngIf="error">-->
+<!--      <p>{{ error }}</p>-->
+<!--    </div>-->
+<!--    <app-alert [message]="error" *ngIf="error" (close)="onHandleError()"></app-alert>-->
     <div class="formular__mail">
       <label for="email">E-Mail</label>
       <input
