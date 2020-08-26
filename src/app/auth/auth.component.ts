@@ -1,9 +1,9 @@
-import { Component, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { AuthResponseData, AuthService } from './auth.service';
 import { Router } from '@angular/router';
-import { AlertComponent } from '../shared/alert/alert.component';
+
 
 
 @Component({
@@ -12,12 +12,14 @@ import { AlertComponent } from '../shared/alert/alert.component';
   styleUrls: ['./auth.component.scss'],
 })
 
-export class AuthComponent {
+export class AuthComponent implements OnDestroy {
   isLoginMode = true;
   isLoading = false;
-  // error: string = null;
+  error: string = null;
 
-  constructor(private authService: AuthService, private router: Router, private componentFactoryResolver: ComponentFactoryResolver) {
+  private closeSub: Subscription;
+
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   onSwitchMode() {
@@ -48,8 +50,7 @@ export class AuthComponent {
         },
         errorMessage => {
           console.log('error', errorMessage);
-          // this.error = errorMessage;
-          this.showErrorAlert(errorMessage);
+          this.error = errorMessage;
           this.isLoading = false;
        }
     );
@@ -57,11 +58,14 @@ export class AuthComponent {
     form.reset();
   }
 
-  // onHandleError() {
-  //   this.error = null;
-  // }
-
-  private showErrorAlert(message: string) {
-    const alertCompFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
+  onHandleError() {
+    this.error = null;
   }
+
+  ngOnDestroy(): void {
+    if (this.closeSub) {
+      this.closeSub.unsubscribe();
+    }
+  }
+
 }
