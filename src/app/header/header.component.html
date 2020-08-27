@@ -1,10 +1,4 @@
 <div class="header">
-<!--  <ul class="header-nav-bar-ul header-nav-bar-left">-->
-<!--    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth" *ngIf="!isAuthenticated">Login</a></li>-->
-<!--    <li class="header-nav-bar__li" routerLinkActive="active"><a routerLink="/auth"  *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></li>-->
-<!--    <li class="header-nav-bar-left__li"><a style="cursor: pointer" (click)="onSaveData()" *ngIf="isAuthenticated">Save Data</a></li>-->
-<!--  </ul>-->
-
   <div class ="header__logo">
     <img src="../assets/img/pineapple.png" class= "header__img" alt="Logo" style="max-height: 80px;">
   </div>
@@ -20,6 +14,8 @@
      </div>
     </ul>
   </div>
-<!--  <li class="header-nav-bar__li"><a style="cursor: pointer" (click)="onSaveData()" *ngIf="isAuthenticated">Save Data</a></li>-->
-  <app-button [add]="true" [buttonName]="'Save all Changes'" (click)="onSaveData()" *ngIf="isAuthenticated"></app-button>
+  <div class="save-and-edit">
+    <app-button [add]="true" [buttonName]="'Save all Changes'" (click)="onSaveData()" *ngIf="isAuthenticated"></app-button>
+    <app-button [edit]="true" [buttonName]="'Edit Categories'" (click)="onEditCategory()" *ngIf="isAuthenticated"></app-button>
+  </div>
 </div>

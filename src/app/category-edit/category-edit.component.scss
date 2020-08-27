@@ -55,7 +55,6 @@ input {
     max-width: 400px;
   }
   &__group {
-    width:400px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -74,13 +73,6 @@ input {
     margin-bottom: 5px;
   }
 }
-
-//@include large {
-//  .formular {
-//    width: 300px;
-//
-//  }
-//}
 
 @include medium {
   .formular {
@@ -104,10 +96,6 @@ input {
     &__edit {
       max-width: 300px;
     }
-    &__group {
-      width:300px;
-
-    }
 
     &__group-item {
       background-color: white;
@@ -119,3 +107,7 @@ input {
     }
 
   }
+
+.active {
+  border: 1px solid rgb(42, 248, 183);
+}

@@ -1,43 +1,48 @@
+@import './src/styles';
 .button {
   color: white;
+  min-width: 60px;
+  height: 40px;
   display: block;
-  border-radius: 3px;
-  border: 1px solid black;
-  padding: 5px;
+  border-radius: 20px;
+  padding: 5px 10px;
   outline: none;
   transition: 0.2s ease-in-out;
   margin: 10px 10px;
-  width: 80px;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 200;
+  box-shadow: 4px 4px 4px 3px #e1e1e1;
 }
 .button:hover {
   cursor: pointer;
-  border-color: black;
-  outline: none;
 };
 .add-button {
-  background: linear-gradient(90deg, rgb(61, 17, 255), rgb(20, 134, 253));
+  @include save;
 };
 .add-button:hover {
-  background: linear-gradient(90deg, rgb(5, 2, 143), rgb(5, 104, 255));
+  @include save-reverse;
+};
+.edit-button {
+  @include edit;
+};
+.edit-button:hover {
+  @include edit-reverse;
 };
 .clear-button {
-  background: linear-gradient(90deg, rgb(6, 124, 255), rgb(5, 228, 255));
+  @include clear;
 }
 .clear-button:hover {
-  background: linear-gradient(90deg, rgb(6, 99, 198), rgb(5, 228, 255));
+  @include clear-reverse;
 }
 .delete-button {
-  background: black;
+  @include delete;
 }
-.delete-button:focus {
-  background:rgb(4, 9, 84);
+.delete-button:hover {
+  @include delete-reverse;
 };
 
-@media (max-width: 830px) {
+@include large {
   .button {
     margin: 10px 3px;
-    width: 70px;
   }
 }
