@@ -19,6 +19,9 @@ export class ButtonComponent {
   clear: boolean;
 
   @Input()
+  edit: boolean;
+
+  @Input()
   public disabledValue: boolean;
 
   constructor() { }

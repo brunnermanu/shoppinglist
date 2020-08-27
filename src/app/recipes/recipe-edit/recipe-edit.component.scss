@@ -2,6 +2,10 @@
 
 .row {
   width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .button-area {
   height: 80px;
@@ -114,25 +118,21 @@ textarea.ng-invalid.ng-touched {
     width: 250px;
   }
 
-  .form-group-img {
-    width: 250px;
-  }
-
   .img-responsive {
     max-width: 250px;
   }
 
   .form-group-description {
-    width: 250px;
+    margin-top:20px;
   }
 
   .form-group-description textarea {
     width: 250px;
   }
 
-  .form-group-ingredient {
-    width: 250px;
-  }
+  //.form-group-ingredient {
+  //  width: 250px;
+  //}
   .form-group-ingredient label {
     font-size: 10px;
   }

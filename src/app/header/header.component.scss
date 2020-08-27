@@ -2,23 +2,23 @@
 
 .header {
   max-width: 1200px;
-  height: 230px;
+  height: 290px;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   align-content: center;
   align-items: center;
-  margin: 0 auto 0 auto;
+  margin: 0 auto 50px auto;
 
 
   &__logo {
     text-align: center;
-    width: 100px;
+    width: 300px;
   }
 
   &__img {
-    max-width: 100px;
+    max-width: 300px;
   }
 }
 
@@ -61,6 +61,13 @@
   }
 }
 
+.save-and-edit {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
 @include large {
   .header {
     width: auto;
@@ -72,11 +79,11 @@
 
 @include medium {
   .header-nav-bar__ul {
-    width: 300px;
+    width: auto;
     justify-content: center;
   }
   .header-nav-bar__li {
-    width: 75px;
+    width: 100px;
     justify-content: center;
   }
 }
@@ -96,5 +103,4 @@
     margin-bottom: 15px;
   }
 }
-
 

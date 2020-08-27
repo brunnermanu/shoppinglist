@@ -38,11 +38,10 @@
         color: lightgrey;
     }
   }
-
-
 }
+
 .active {
-  border: 1px solid #0505b2;
+  border: 1px solid rgb(42, 248, 183);
 }
 
 @include large {

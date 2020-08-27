@@ -1,11 +1,9 @@
-import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, NgForm} from '@angular/forms';
-import {of, Subscription} from 'rxjs';
-import {Ingredient} from '../shared/ingredient.model';
-import {ShoppingListService} from '../shopping-list/shopping-list.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Categories} from '../shared/category.model';
-import {CategoryService} from './category.service';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { NgForm} from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
+import { Categories } from '../shared/category.model';
+import { CategoryService } from './category.service';
 
 @Component({
   selector: 'app-category-edit',
@@ -21,12 +19,11 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
   editedCategoryIndex: number;
   editedItem: Categories;
   categories: Categories[];
+  clickedIdx: number;
 
   constructor(private shoppingListService: ShoppingListService,
-              private categoryService: CategoryService,
-              private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router) {
+              private categoryService: CategoryService
+              ) {
   }
 
   ngOnInit() {
@@ -73,6 +70,7 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
       this.onClear();
     }
   onEditCategory(index: number) {
+      this.clickedIdx = index;
       this.categoryService.startedEditing.next(index);
     }
 

@@ -19,6 +19,9 @@ export class ButtonSubmitComponent implements OnInit {
   clear: boolean;
 
   @Input()
+  edit: boolean;
+
+  @Input()
   public disabledValue: boolean;
 
   constructor() { }

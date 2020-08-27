@@ -26,8 +26,9 @@
     <hr>
     <ul class="list__group">
       <a class="list__group-item"
-         *ngFor="let category of categories; let i = index"
-         (click)="onEditCategory(i)">
+         [class.active]="idx === clickedIdx"
+         *ngFor="let category of categories; let idx = index"
+         (click)="onEditCategory(idx)">
          {{category.category}}
       </a>
     </ul>

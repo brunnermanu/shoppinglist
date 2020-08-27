@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 
 import { DataStorageService } from '../shared/data-storage.service';
 import { AuthService } from '../auth/auth.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit, OnChanges, OnDestroy {
   isAuthenticated = false;
   private userSub: Subscription;
 
-  constructor(private dataStorageService: DataStorageService, private authService: AuthService) {
+  constructor(private dataStorageService: DataStorageService, private authService: AuthService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -46,6 +47,10 @@ export class HeaderComponent implements OnInit, OnChanges, OnDestroy {
 
   ngOnDestroy(): void {
     this.userSub.unsubscribe();
+  }
+
+  onEditCategory() {
+    this.router.navigate(['category-edit']);
   }
 
 }
