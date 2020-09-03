@@ -20,8 +20,8 @@ export class HeaderComponent implements OnInit, OnChanges, OnDestroy {
   ngOnInit(): void {
     this.userSub = this.authService.user.subscribe(user => {
       this.isAuthenticated = !user ? false : true ;
-      if (this.isAuthenticated) {
-        console.log('fetch in ngOnInit', this.onFetchData());
+      if (user) {
+        this.onFetchData();
       }
     });
   }
@@ -29,6 +29,7 @@ export class HeaderComponent implements OnInit, OnChanges, OnDestroy {
   ngOnChanges() {
       this.onSaveData();
   }
+
   onSaveData() {
     this.dataStorageService.storeRecipes();
     this.dataStorageService.storeShoppingList();

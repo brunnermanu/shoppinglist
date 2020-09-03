@@ -1,8 +1,9 @@
-import { Component, OnDestroy } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable, Subscription } from 'rxjs';
 import { AuthResponseData, AuthService } from './auth.service';
 import { Router } from '@angular/router';
+import {DataStorageService} from '../shared/data-storage.service';
 
 
 
@@ -12,14 +13,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./auth.component.scss'],
 })
 
-export class AuthComponent implements OnDestroy {
+export class AuthComponent implements OnInit, OnDestroy {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
 
+
   private closeSub: Subscription;
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router, private dataStorageService: DataStorageService) {
+  }
+
+  ngOnInit(): void {
+    this.dataStorageService.fetchRecipes().subscribe();
+    this.dataStorageService.fetchShoppingList().subscribe();
+    this.dataStorageService.fetchCategories().subscribe();
   }
 
   onSwitchMode() {
@@ -46,7 +54,13 @@ export class AuthComponent implements OnDestroy {
         responseData => {
           console.log('responseData', responseData);
           this.isLoading = false;
-          this.router.navigate(['/recipes']);
+          console.log('respDataGleichGetUser', responseData.localId === this.dataStorageService.getUser());
+          if (responseData.localId === this.dataStorageService.getUser()) {
+              this.dataStorageService.fetchRecipes().subscribe();
+              this.dataStorageService.fetchShoppingList().subscribe();
+              this.dataStorageService.fetchCategories().subscribe();
+              this.router.navigate(['/recipes']);
+          }
         },
         errorMessage => {
           console.log('error', errorMessage);
