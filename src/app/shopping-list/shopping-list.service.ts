@@ -15,7 +15,6 @@ export class ShoppingListService {
     this.categories = this.categoryService.categories.map(item => item.category);
     this.categoryService.getUpdatedCategories().subscribe(categories => {
       this.categories = categories.map(item => item.category);
-      console.log('this.categories IN our new awesome method', this.categories);
     });
   }
 
