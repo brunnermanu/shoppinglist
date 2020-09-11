@@ -10,10 +10,9 @@
   flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
-  border: 0.5px solid grey;
-  border-radius: 4px;
   background-color: white;
   margin-bottom: 5px;
+  @include box-shadow;
 }
 
 .pull-left h2 {
@@ -29,12 +28,12 @@
 }
 
 .recipe-area:hover {
-  box-shadow:  2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+  background-color: rgba(149, 250, 216, 0.5);
+
 }
 
 .active {
-  box-shadow:  2px 2px 4px 4px rgba(0, 0, 0, 0.2);
-  background-color: rgba(0,0,0,0.02);
+  background-color: rgba(149, 250, 216, 0.5);
 }
 
 

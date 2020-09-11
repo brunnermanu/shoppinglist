@@ -1,10 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
 body {
   font-family: 'Raleway', sans-serif;
+  background-color: #fbfbfb;
 }
 
 .active {
   background-color: rgba(0,0,0,0.02);
+}
+
+input,
+select,
+textarea {
+  border: none;
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072);
+}
+input,
+select {
+  height: 30px;
+  user-select: all;
+}
+
+@mixin box-shadow {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 @mixin large {
@@ -26,38 +52,43 @@ body {
 }
 
 @mixin save {
-  background: rgb(42, 248, 183);
+  background: rgba(24, 180, 150, 0.75);
   color: white;
-  border: 1px solid rgb(42, 248, 183);
+  border: 1px solid rgba(24, 180, 150, 0.75);
 }
+//@mixin save {
+//  background: rgba(0, 192, 135, 0.75);
+//  color: white;
+//  border: 1px solid rgba(0, 192, 135, 0.75);
+//}
 @mixin save-reverse {
-  background: rgb(9, 227, 134);
+  background: rgba(24, 218, 188, 0.75);
   color: white;
-  border: 1px solid rgb(9, 227, 134);
+  border: 1px solid rgba(24, 218, 188, 0.75);
 }
 
 @mixin edit {
   color: white;
-  background:#bb70eb;
-  border: 1px solid #bb70eb;
+  background: #935ed1;
+  border: 1px solid #935ed1;
 }
 
 @mixin edit-reverse {
   color: white;
-  background: #a74deb;
-  border: 1px solid #a74deb;
+  background: #b14df5;
+  border: 1px solid #b14df5;
 }
 
 @mixin clear {
-  color: rgb(61, 229, 144);
+  color: rgba(24, 180, 150, 0.75);
   background: white;
-  border: 1px solid rgb(61, 229, 144)
+  border: 1px solid rgba(24, 180, 150, 0.75);
 }
 
 @mixin clear-reverse {
-    color: rgb(9, 227, 134);
-    background: #bfffe5;
-    border: 1px solid rgb(9, 227, 134);
+  color: rgba(24, 218, 188, 0.75);
+  background: rgba(149, 250, 216, 0.5);
+  border: 1px solid rgba(24, 218, 188, 0.75);
 }
 
 @mixin delete {

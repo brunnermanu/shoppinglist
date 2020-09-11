@@ -26,7 +26,7 @@
 
 .form-group input {
   width: 300px;
-  height: 25px;
+  //height: 25px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
@@ -82,21 +82,21 @@
 .ingredient-area-amount #amount,
 .ingredient-area-unit #unit {
   width: 50px;
-  height: 25px;
+  //height: 25px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
 
 .ingredient-area-name #ingredient {
   width: 130px;
-  height: 25px;
+  //height: 25px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
 
 .ingredient-area-category #category {
   width: 90px;
-  height: 31px;
+  //height: 31px;
   font-family: 'Raleway', sans-serif;
   font-size: medium;
 }
@@ -130,9 +130,6 @@ textarea.ng-invalid.ng-touched {
     width: 250px;
   }
 
-  //.form-group-ingredient {
-  //  width: 250px;
-  //}
   .form-group-ingredient label {
     font-size: 10px;
   }
