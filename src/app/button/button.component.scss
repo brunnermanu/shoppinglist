@@ -11,7 +11,7 @@
   margin: 10px 10px;
   font-size: 12px;
   font-weight: 200;
-  box-shadow: 4px 4px 4px 3px #e1e1e1;
+  @include box-shadow;
 }
 .button:hover {
   cursor: pointer;

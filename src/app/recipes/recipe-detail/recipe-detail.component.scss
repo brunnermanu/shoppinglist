@@ -2,10 +2,21 @@
 
 .detail-area {
   width: 400px;
+  padding:20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  @include box-shadow;
 
   &__img-area {
     display: flex;
     justify-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
   }
 
   &__img {
@@ -39,21 +50,37 @@
   &__list-item {
     text-decoration: none;
   }
+
+  &__text {
+    white-space:pre-wrap;
+  }
 }
 
 @include large {
   .detail-area {
     width: 250px;
+
+    &__img-area {
+      width: 250px;
+    }
+
+    &__img {
+      margin-top: 20px;
+      width: 100%;
+    }
   }
 }
 
 @include medium {
   .detail-area {
     margin-top: 50px;
+    width: 250px;
+    padding:10px;
+
 
     &__img {
       margin-top: 20px;
-      max-width: 250px;
+      width: 100%;
     }
   }
 }
