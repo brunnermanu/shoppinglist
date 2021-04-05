@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { DataStorageService } from '../shared/data-storage.service';
@@ -10,21 +10,17 @@ import {Router} from '@angular/router';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnChanges, OnDestroy {
+export class HeaderComponent implements  OnDestroy {
   isAuthenticated = false;
   private userSub: Subscription;
 
   constructor(private dataStorageService: DataStorageService, private authService: AuthService, private router: Router) {
     this.userSub = this.authService.user.subscribe(user => {
-      this.isAuthenticated = !user ? false : true ;
+      this.isAuthenticated = !!user ;
       if (user) {
         this.onFetchData();
       }
     });
-  }
-
-  ngOnChanges() {
-      this.onSaveData();
   }
 
   onSaveData() {
