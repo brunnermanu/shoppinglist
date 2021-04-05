@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
@@ -6,6 +6,7 @@ import { ShoppingListService } from '../../shopping-list/shopping-list.service';
 import { of } from 'rxjs';
 import {CategoryService} from '../../category-edit/category.service';
 import {Categories} from '../../shared/category.model';
+import {DataStorageService} from '../../shared/data-storage.service';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class RecipeEditComponent implements OnInit {
               private shoppingListService: ShoppingListService,
               private categoryService: CategoryService,
               private formBuilder: FormBuilder,
-              private router: Router) {
+              private router: Router,
+              private dataStorageService: DataStorageService) {
     this.form = this.formBuilder.group({
       categories: ['']
     });
@@ -53,8 +55,10 @@ export class RecipeEditComponent implements OnInit {
     //   this.recipeForm.value['ingredients']);
     if (this.editMode) {
       this.recipeService.updateRecipe(this.id, this.recipeForm.value);
+      this.dataStorageService.storeRecipes();
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
+      this.dataStorageService.storeRecipes();
     }
     this.onCancel();
   }
@@ -73,10 +77,12 @@ export class RecipeEditComponent implements OnInit {
         category: new FormControl(null)
       })
     );
+    this.dataStorageService.storeRecipes();
   }
 
   onDeleteIngredient(index: number) {
     (this.recipeForm.get('ingredients') as FormArray).removeAt(index);
+    this.dataStorageService.storeRecipes();
   }
 
   get controls() { // a getter!

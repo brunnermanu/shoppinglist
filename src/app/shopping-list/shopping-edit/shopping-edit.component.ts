@@ -1,11 +1,12 @@
-import {Component, Input, OnDestroy, OnInit, Output, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, FormsModule, NgForm} from '@angular/forms';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup, NgForm} from '@angular/forms';
 import {of, Subscription} from 'rxjs';
 import { Ingredient} from '../../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CategoryService} from '../../category-edit/category.service';
 import {Categories} from '../../shared/category.model';
+import {DataStorageService} from '../../shared/data-storage.service';
 
 
 @Component({
@@ -27,7 +28,8 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
               private categoryService: CategoryService,
               private formBuilder: FormBuilder,
               private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              private dataStorageService: DataStorageService) {
     this.form = this.formBuilder.group({
       categories: ['']
     });
@@ -60,8 +62,10 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     const newIngredient = new Ingredient(value.amount, value.unit, value.name, value.category);
     if (this.editMode) {
       this.shoppingListService.updateIngredient(this.editedItemIndex, newIngredient);
+      this.dataStorageService.storeShoppingList();
     } else {
       this.shoppingListService.addIngredient(newIngredient);
+      this.dataStorageService.storeShoppingList();
     }
     this.editMode = false;
     form.reset();
@@ -74,6 +78,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
 
   onDelete() {
     this.shoppingListService.deleteIngredient(this.editedItemIndex);
+    this.dataStorageService.storeShoppingList();
     this.onClear();
   }
   getCategoryList() {

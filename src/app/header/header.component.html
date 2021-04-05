@@ -15,7 +15,7 @@
     </ul>
   </div>
   <div class="save-and-edit">
-    <app-button [add]="true" [buttonName]="'Save all Changes'" (click)="onSaveData()" *ngIf="isAuthenticated"></app-button>
-    <app-button [edit]="true" [buttonName]="'Edit Categories'" (click)="onEditCategory()" *ngIf="isAuthenticated"></app-button>
+<!--    <app-button [add]="true" [buttonName]="'Save all Changes'" (click)="onSaveData()" *ngIf="isAuthenticated"></app-button>-->
+    <app-button [edit]="true" [buttonName]="'Edit or add Categories'" (click)="onEditCategory()" *ngIf="isAuthenticated"></app-button>
   </div>
 </div>
