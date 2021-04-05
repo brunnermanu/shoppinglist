@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Categories } from '../shared/category.model';
 import { CategoryService } from './category.service';
+import {DataStorageService} from '../shared/data-storage.service';
 
 @Component({
   selector: 'app-category-edit',
@@ -22,7 +23,8 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
   clickedIdx: number;
 
   constructor(private shoppingListService: ShoppingListService,
-              private categoryService: CategoryService
+              private categoryService: CategoryService,
+              private dataStorageService: DataStorageService
               ) {
   }
 
@@ -53,8 +55,10 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
       const newCategory = new Categories(value.category);
       if (this.editMode) {
         this.categoryService.updateCategories(this.editedCategoryIndex, newCategory);
+        this.dataStorageService.storeCategories();
       } else {
         this.categoryService.addCategory(newCategory);
+        this.dataStorageService.storeCategories();
       }
       this.editMode = false;
       form.reset();
@@ -63,15 +67,18 @@ export class CategoryEditComponent implements OnInit, OnDestroy {
   onClear() {
       this.categoryForm.reset();
       this.editMode = false;
+      this.dataStorageService.storeCategories();
     }
 
   onDelete() {
       this.categoryService.deleteCategory(this.editedCategoryIndex);
       this.onClear();
     }
+
   onEditCategory(index: number) {
       this.clickedIdx = index;
       this.categoryService.startedEditing.next(index);
+      this.dataStorageService.storeCategories();
     }
 
   ngOnDestroy(): void {

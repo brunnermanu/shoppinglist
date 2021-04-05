@@ -15,7 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    justify-content: center;
     width: 400px;
   }
 
@@ -43,8 +42,8 @@
 
   &__list {
     list-style-type: none;
-    padding:0px;
-    margin: 40px 0px;
+    padding: 0;
+    margin: 40px 0;
   }
 
   &__list-item {
@@ -54,6 +53,20 @@
   &__text {
     white-space:pre-wrap;
   }
+}
+
+.added-successful {
+  border: solid 1px #5bc19d;
+  background-color: #b0eee0;
+  border-radius: 4px;
+  padding: 0 20px;
+}
+
+.delete-message {
+  border: solid 1px #6c6a6d;
+  background-color: #efecef;
+  border-radius: 4px;
+  padding: 0 20px 20px 20px;
 }
 
 @include large {

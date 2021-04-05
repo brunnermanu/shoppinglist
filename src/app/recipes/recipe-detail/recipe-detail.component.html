@@ -1,15 +1,27 @@
 <div class="detail-area">
   <div class="detail-area__img-area">
-    <img [src]="recipe.imagePath" class="detail-area__img">
+    <img [src]="recipe.imagePath" class="detail-area__img" alt="{{recipe.name}}">
   </div>
   <div>
     <h3 class="detail-area__title">{{ recipe.name }}</h3>
   </div>
 
+  <div class="added-successful" *ngIf="onSave === true">
+    <p>added successful</p>
+  </div>
+
+  <div class="delete-message" *ngIf="clickedDelete">
+    <p>Do you really want to delete?</p>
+    <div class="detail-area__btn-area">
+      <app-button [delete]="true" [buttonName]="'Yes, delete Recipe'" (click)="onDeleteRecipe()"></app-button>
+      <app-button [add]="true" [buttonName]="'No, go back'" (click)="onClickedNo()"></app-button>
+    </div>
+  </div>
+
   <div class="detail-area__btn-area">
     <app-button [add]="true" [buttonName]="'add to Shopping List'" (click)="onAddToShoppingList()"></app-button>
     <app-button [edit]="true" [buttonName]="'Edit Recipe'" (click)="onEditRecipe()"></app-button>
-    <app-button [delete]="true" [buttonName]="'delete Recipe'" (click)="onDeleteRecipe()"></app-button>
+    <app-button [delete]="true" [buttonName]="'delete Recipe'" (click)="onDeleteMessage()"></app-button>
   </div>
 
   <div>
