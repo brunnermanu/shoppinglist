@@ -28,9 +28,9 @@ export class HeaderComponent implements OnChanges, OnDestroy {
   }
 
   onSaveData() {
-    this.dataStorageService.storeRecipes();
-    this.dataStorageService.storeShoppingList();
-    this.dataStorageService.storeCategories();
+    this.dataStorageService.storeRecipes().subscribe();
+    this.dataStorageService.storeShoppingList().subscribe();
+    this.dataStorageService.storeCategories().subscribe();
   }
 
   onFetchData() {

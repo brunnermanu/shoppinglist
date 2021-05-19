@@ -33,16 +33,15 @@ export class DataStorageService {
     }
   }
 
+  // with the put request, all recipes would be overwritten in the firebase-database
   storeRecipes() {
     const actualUser = this.getUser();
     if (actualUser) {
       const recipes = this.recipeService.getRecipes();
-      this.http.put(
+      return this.http.put(
         'https://shoppinglist-bb6ef.firebaseio.com/' + actualUser + '/recipes.json',
         recipes
-      ).subscribe(response => {
-        console.log(response);
-      });
+      );
     }
   }
 
@@ -67,15 +66,14 @@ export class DataStorageService {
       );
   }
 
+// with the put request, all ingredients would be overwritten in the firebase-database
   storeShoppingList() {
     const actualUser = this.getUser();
     const ingredients = this.shoppingListService.getIngredients();
-    this.http.put(
+    return this.http.put(
       'https://shoppinglist-bb6ef.firebaseio.com/' + actualUser + '/shoppinglist.json',
       ingredients
-    ).subscribe(response => {
-      console.log(response);
-    });
+    );
   }
 
   fetchShoppingList() {
@@ -102,12 +100,10 @@ export class DataStorageService {
   storeCategories() {
     const actualUser = this.getUser();
     const categories = this.categoryService.getCategories();
-    this.http.put(
+    return this.http.put(
       'https://shoppinglist-bb6ef.firebaseio.com/' + actualUser + '/categories.json',
       categories
-    ).subscribe(response => {
-      console.log(response);
-    });
+    );
   }
 
   fetchCategories() {

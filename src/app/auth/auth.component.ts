@@ -49,9 +49,7 @@ export class AuthComponent implements OnDestroy {
 
     authObs.subscribe(
         responseData => {
-          console.log('responseData', responseData);
           this.isLoading = false;
-          console.log('respDataGleichGetUser', responseData.localId === this.dataStorageService.getUser());
           if (responseData.localId === this.dataStorageService.getUser()) {
               this.dataStorageService.fetchRecipes().subscribe();
               this.dataStorageService.fetchShoppingList().subscribe();
@@ -60,7 +58,6 @@ export class AuthComponent implements OnDestroy {
           }
         },
         errorMessage => {
-          console.log('error', errorMessage);
           this.error = errorMessage;
           this.isLoading = false;
        }
